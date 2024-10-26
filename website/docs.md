@@ -673,14 +673,14 @@ type cache struct {
     data map[string]string
 }
 
-func (c *Cache) Put(_ context.Context, key, value string) error {
+func (c *cache) Put(_ context.Context, key, value string) error {
     c.mu.Lock()
     defer c.mu.Unlock()
     c.data[key] = value
     return nil
 }
 
-func (c *Cache) Get(_ context.Context, key string) (string, error) {
+func (c *cache) Get(_ context.Context, key string) (string, error) {
     c.mu.Lock()
     defer c.mu.Unlock()
     return c.data[key], nil
@@ -735,7 +735,7 @@ cached value. Such methods can be specially marked to prevent automatic retries.
 ```go
 type Cache interface{
     ...
-    Append(context.Context, key, val string) error
+    Append(ctx context.Context, key, val string) error
 }
 
 // Do not retry Cache.Append.

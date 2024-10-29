@@ -1141,14 +1141,14 @@ invoked component and method, and whether or not the call was local or remote.
 
 Service Weaver declares the following set of HTTP related metrics.
 
--   `serviceweaver_http_request_count`: Count of HTTP requests.
--   `serviceweaver_http_error_count`: Count of HTTP requests resulting in a 4XX or 5XX
+-   `serviceweaver_system_http_request_count`: Count of HTTP requests.
+-   `serviceweaver_system_http_error_count`: Count of HTTP requests resulting in a 4XX or 5XX
     response. This metric is also labeled with the returned status code.
--   `serviceweaver_http_request_latency_micros`: Duration, in microseconds, of HTTP
+-   `serviceweaver_system_http_request_latency_micros`: Duration, in microseconds, of HTTP
     request execution.
--   `serviceweaver_http_request_bytes_received`: Estimated number of bytes *received* by
+-   `serviceweaver_system_http_request_bytes_received`: Estimated number of bytes *received* by
     an HTTP handler.
--   `serviceweaver_http_request_bytes_returned`: Estimated number of bytes *returned* by
+-   `serviceweaver_system_http_request_bytes_returned`: Estimated number of bytes *returned* by
     an HTTP handler.
 
 If you pass an [`http.Handler`](https://pkg.go.dev/net/http#Handler) to the
